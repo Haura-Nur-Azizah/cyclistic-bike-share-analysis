@@ -24,20 +24,39 @@ Semua langkah tersedia di sql/cyclistic_latihan.sql. Data mentah tidak diubah, p
 |Karakter tersembunyi `\r` di `member_casual`|Seluruh Baris, terbawa dari format file CSV|Dibuat kolom baru `member_type` yang sudah bersih, kolom asli tidak diubah|
 |Label `docked bike` dan `classic bike`|Merujuk pada hasil yang sama yaitu `classic bike`|`docked bike` digabung menjadi `classic bike`|
 
-Hasil: 5.595.063 baris menjadi 5.508.515 baris (sekitar 1,5% dibuang).
-Kolom tambahan: ride_length (menit), day_of_week, month, start_hour
+Hasil: 5.595.063 baris menjadi 5.508.515 baris sekitar 1,5% dibuang.
+Kolom tambahan: ride_length, day_of_week, month, start_hour.
 
 ## Temuan Utama
 **1. Member punya lebih banyak ride, casual berkendara lebih lama.**
 Member: 3.014.936 ride (54,7%), rata-rata durasi 13,4 menit. Casual: 2.493.579 ride (45,3%), rata-rata durasi 28,0 menit.
+
 **2. Casual lebih ramai di akhir pekan, sedangkan ride member ramai di hari kerja**
 Hari Sabtu sebanyak 550.170 dan hari Minggu sebanyak 474.218 merupakan hari tersibuk  casual, sedangkan hari tersibuk bagi ride member adalah hari Rabu yaitu sebanyak 469.601.
+
 **3. Member menunjukkan pola commuter**
 Di hari kerja, ride member punya dua puncak jam 7-8 pagi dan jam 17 yaitu sebanyak 257.874 ride. Pola ini hilang di akhir pekan, saat ride casual lebih banyak dari ride member sepanjang siang sampai malam.
+
 **4. Aktivitas casual sangat dipengaruhi musim**
 Jumlah ride casual naik tajam dari 9.945 di bulan Februari menjadi 435.746 di bulan Juli, dan melampaui member selama Juni sampai Agustus. Saat musim dingin, member lebih stabil: pada Januari ada 77.573 ride member dibanding 17.829 ride casual. Pola ini mungkin berkaitan dengan cuaca hangat dan musim liburan, tetapi data tidak mencatat alasan perjalanan.
+
 **5. Casual terkonsentrasi di lokasi wisata dan rekreasi**
 Stasiun awal teratas ride casual: Streeter Dr & Grand Ave (65.522), Millennium Park (33.152), Michigan Ave & Oak St (29.423), Shedd Aquarium (22.940), Theater on the Lake (21.085)
+
 **6. Tipe sepeda bukan pembeda utama**
 Kedua kelompok lebih banyak memakai sepeda classic dengan persentase sekitar 65% ride member dan 63% ride casual.
 
+## Rekomendasi
+Melihat dari pola yang terlihat, berikut merupakan rekomendasi saya atas pertanyaan bisnis yang diajukan;
+1. Berikan promo membership pada akhir pekan serta bulan puncak yaitu pada musim panas bulan Juli ride casual menggunakan sepeda. Jalankan kampanye promo membership saat menjelang akhir pekan dan musim panas saat ride casual banyak mengendarai sepeda.
+2. Tonjolkan penghematan biaya saat ride panjang. Melihat dari rata-rata, ride casual lebih lama mengendarai sepeda jika dibandingkan dengan ride member, tonjolkan paket yang menekankan biaya per ride lebih murah dibanding bayar per perjalanan agar ride casual tertarik dengan membership.
+3. Pasang penawaran membership di titik yang ramai dipakai casual. Dengan begitu, ride casual akan jauh lebih mudah melihat tawarannya.
+
+## Keterbatasan
+1. Data hanya meliputi satu tahun yaitu tahun 2021, pola musim belum tentu sama di tahun lain.
+2. Sekitar 12% ride tidak punya nama stasiun yang di mana semuanya adalah sepeda elektrik, sehingga analisis stasiun kurang mewakili pengguna sepeda elektrik.
+3. Tidak ada ID pengguna, sehingga tidak bisa melacak satu casual rider yang berulang kali membeli pass.
+4. Data tidak memuat tujuan perjalanan.
+
+## Alat yang Dipakai
+MySQL Workbench (pembersihan dan analisis), Tableau Public (dashboard), GitHub (dokumentasi).
