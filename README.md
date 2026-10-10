@@ -1,6 +1,7 @@
 # cyclistic-bike-share-analysis
 Studi kasus Google Data Analytics Capstone. Analisis 5,5 juta data perjalanan sepeda di Chicago (tahun 2021) memakai MySQL dan Tableau Public.
 ![Dashboard](images/Dashboard.png)
+[Data-Perjalanan-Divvy-2021](https://public.tableau.com/views/DataperjalananDivvy2021/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## Business Task
 Cyclistic, perusahaan bike-share di Chicago, ingin mengubah ride casual menjadi annual member karena annual member lebih menguntungkan bagi perusahaan. Pertanyaan bisnis yang saya jawab adalah: “Bagaimana annual member dan ride casual memakai sepeda Cyclistic secara berbeda?” Untuk menjawabnya, saya menganalisis pola penggunaan berdasarkan jam, hari, dan musim, serta durasi perjalanan dan lokasi awal, agar diketahui kapan dan di mana ride casual paling aktif. Analisis ini diminta oleh Lily Moreno, Director of Marketing Cyclistic. Hasilnya akan dipakai tim marketing untuk merancang strategi, dan rekomendasinya akan dipresentasikan kepada tim eksekutif Cyclistic untuk disetujui.
