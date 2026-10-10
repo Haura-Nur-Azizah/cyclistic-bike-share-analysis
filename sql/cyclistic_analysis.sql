@@ -82,7 +82,7 @@ SELECT COUNT(*) - COUNT(DISTINCT ride_id) AS duplikat
 FROM cyclistic_db.ride_trip_clean;
 
 -- 4b. Data kosong (hasil: stasiun awal 670.450, stasiun akhir 714.735,
---     koordinat akhir 4.587). TIDAK dihapus, hanya disaring saat analisis stasiun.
+--     koordinat akhir 4.587). Tidak dihapus, hanya disaring saat analisis stasiun.
 SELECT
   SUM(start_station_name IS NULL OR start_station_name = '') AS start_station_kosong,
   SUM(end_station_name   IS NULL OR end_station_name   = '') AS end_station_kosong,
@@ -185,7 +185,7 @@ GROUP BY start_station_name
 ORDER BY total_ride DESC
 LIMIT 10;
 
--- 6h. Titik ramai berdasarkan koordinat, untuk peta di Tableau
+-- 6h. Titik ramai berdasarkan koordinat
 -- Pembulatan 3 desimal = kotak sekitar 100 meter, mencakup sepeda elektrik tanpa stasiun
 SELECT ROUND(start_lat, 3) AS lat, ROUND(start_lng, 3) AS lng,
        member_type, COUNT(*) AS total
